@@ -63,7 +63,6 @@ const updateUIInterface = async () => {
         document.querySelector('#temp').textContent = `The temperature : ${DataToJson.temp}`;
         document.querySelector('#content').textContent = `Your status : ${DataToJson.content}`;
         
-        
     } catch (error) {
         console.log('Error in Updating the Elements.', error)
     }
