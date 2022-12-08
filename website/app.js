@@ -25,17 +25,16 @@ async function generateData() {
 
     // Getting the User desired Zip code he enetered. to reimplement this again into the Full URL.
     const userZip = document.querySelector('#zip').value;
-    
+
     // Full URL path
     const fullURL = `${siteURL}data/2.5/weather?zip=${userZip}&appid=${apiKey}&units=${tempUnit}`;
 
     // Geeting the User feelings to re-display it again. 
     const userFeelings = document.querySelector('#feelings').value;
 
-    
     // calling the Get function
     getWeatherInfo(fullURL)
-    
+
         // Then calling our POST function.
         .then(temperature => {
             // console.log(temperature)
@@ -80,8 +79,6 @@ const postDataToSite = async (url = '', data = {}) => {
             content: data.content,
         })
     })
-    
-    
 }
 
 // function to update the UI of the web site with the data from the data object.
