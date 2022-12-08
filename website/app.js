@@ -80,7 +80,7 @@ const postDataToSite = async (url = '', data = {}) => {
             content: data.content,
         })
     })
-    // if everything going right. then create a new variable after changing the required data into json. then return these data.
+    
     
 }
 
