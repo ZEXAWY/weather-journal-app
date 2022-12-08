@@ -45,5 +45,7 @@ app.post('/addData', (req, res) => {
     projectData['content'] = req.body.content;
     
     res.send(projectData);
+    data.push(req.body);
     console.log(projectData);
+    // console.log(data);
 })
