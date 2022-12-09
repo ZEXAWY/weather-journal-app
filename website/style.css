@@ -24,9 +24,7 @@ body{
     
 
 }
-#feelings{
-    
-}
+
 .Generate{
     margin-top:12%;
     
@@ -37,26 +35,7 @@ body{
    
 }
 
-#entryHolder{
-    
 
-}
-
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
-}
-
-.headline {
-
-}
 .title{
     margin-top: 5%;
     text-align: center;
@@ -107,11 +86,9 @@ button{
 }
 h1{
     font-size: 36px;
+    text-align: center;
 }
 
-textarea{
-   
-}
 /* Reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
