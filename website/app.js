@@ -9,7 +9,7 @@ const apiKey = '235e48b301613dfacc8114c7110c1899';
 
 // Here is a variable that hold the temperature unit. so we can easily change it later
 const tempUnit = 'imperial'
-
+ 
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + '/' + d.getDate() + '/' + d.getFullYear();
