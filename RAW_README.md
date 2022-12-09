@@ -2,6 +2,7 @@
 
 # Project Title
 
+### **Weather Journal App Project by [udacity](https://learn.udacity.com/nanodegrees/nd0011-fwd-t2/parts/cd0429/lessons/ls1847/concepts/3a60cae7-1938-4e37-92de-ec63f975e9b6)**
 <!-- Add buttons here -->
 
 <!-- Describe your project in brief -->
@@ -42,12 +43,9 @@ I use [**Shields IO**](https://shields.io/) for making badges. It is a simple an
 # Demo-Preview
 
 <!-- Add a demo for your project -->
+This project requirement is to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
 
-<!-- After you have written about your project, it is a good idea to have a demo/preview(**video/gif/screenshots** are good options) of your project so that people can know what to expect in your project. You could also add the demo in the previous section with the product description.
-
-Here is a random GIF as a placeholder.
-
-![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif) -->
+![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif) 
 
 # Table of contents
 
@@ -70,8 +68,7 @@ Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README
 # Installation
 [(Back to top)](#table-of-contents)
 
-<!-- *You might have noticed the **Back to top** button(if not, please notice, it's right there!). This is a good idea because it makes your README **easy to navigate.*** 
-
+<!-- 
 The first one should be how to install(how to generally use your project or set-up for editing in their machine).
 
 This should give the users a concrete idea with instructions on how they can use your project repo with all the steps.
@@ -80,77 +77,98 @@ Following this steps, **they should be able to run this in their device.**
 
 A method I use is after completing the README, I go through the instructions from scratch and check if it is working. -->
 
-<!-- Here is a sample instruction:
+<!-- Here is a sample instruction: -->
 
 To use this project, first clone the repo on your device using the command below:
 
 ```git init```
 
-```git clone https://github.com/navendu-pottekkat/nsfw-filter.git``` -->
+```git clone https://github.com/ZEXAWY/weather-journal-app.git```
 
 # Usage
 [(Back to top)](#table-of-contents)
 
 <!-- This is optional and it is used to give the user info on how to use the project after installation. This could be added in the Installation section also. -->
-
+To use this Project just follow the intallation instruction first.
+1. run the server.js file through command line `node server.js`, Please don't forget to to be inside your folder path where you clone the project to.
+2. Open your web browser (like: Google Chrome) then type `localhost:8000` or `127.0.0.1:8000`, the web application should run for you.
+3. Enter the Zip code for the city you like to know the weather at, and enter how your feel right now.
+4. Press `Generate` button to get the weather for you.
+    
+    
 # Development
 [(Back to top)](#table-of-contents)
 
-<!-- This is the place where you give instructions to developers on how to modify the code.
+The Project main file splited into ``` server.js ``` file, and the main folder ```website``` which hold the website application data.
 
-You could give **instructions in depth** of **how the code works** and how everything is put together.
+The ```website``` folder contain the ```app.js``` file, the ```index.html``` file, and the `CSS.css` file.
 
-You could also give specific instructions to how they can setup their development environment.
+Mainly, You are going to work with only two files which are the `server.js` and the `app.js` files only, the first one is resonsible for the server side code, and the other one is responsible for the client side code.
 
-Ideally, you should keep the README simple. If you need to add more complex explanations, use a wiki. Check out [this wiki](https://github.com/navendu-pottekkat/nsfw-filter/wiki) for inspiration. -->
+1. In the `server.js` file there is 3 main funciton:
+    - the first one is `listening` function and it's used to run the server at specific port (The port i used is `8000`).
+    - the second one is `arrow function` used inside the `app.get()` method, and it's used to get data from the client side code at ```url: '/getData'```.
+    - The third one is `arrow funtion` used inside the `app.post()` method, and it's used to to post data to to created project object `projectData` we created before.
+    Note that the `arrow function` used in `app.get()` and `app.post()` used two Parameters. `(req, res)` where `req` stands for `required` and `res` stands for   `response`. and both `arrow function` send the data back to the `projectData` objected created at line `2` in the code.
 
+    I created an empty array called `data` to hold the whole data that user entered, while runing the server.
+
+    the rest of the code is the same as simple server side code which require `express` package, `body-parser` package as middleware, and the `cors` package. 
+
+
+2. in the `app.js` file:
+    - Creating three variable to hold the `url` we want to fetch the data from:
+        - The first variable is the one who hold the `siteURL`, i get this url from [Here](https://openweathermap.org/current#zip)
+        - The second one to Hold my `apiKey` i get after signup at [openweathermap.org](https://openweathermap.org/).
+        - The thirs one is to hold the `tempUnit` i get it's code from [Here](https://openweathermap.org/current#data).
+    - Adding an `eventListener` to the `Generate` button, so that when `click` on, it should do some fuctions:
+        - The first one is the `generateData` function which `fetch` data from the `fullUrl`, to get the `fullURL` we had to build it after the user enter his zip code so we had to wait for that, and the we concatenate the whole `url` variables together into one single `fullURL` variable. so that function will be `async` function that needs to `await` for `fetch` the required data to build the `fullUrl`.
+        - `.then()` the second function is used to post data after `fetch` data from the 'url` we defined in the `server.js` file using the `app.post()`.
+        - `.then()` the third function is used to display to the user on the website, using the `projectData` object where we saved the data we collected. 
+
+    
 # Contribute
 [(Back to top)](#table-of-contents)
 
-<!-- This is where you can let people know how they can **contribute** to your project. Some of the ways are given below.
+feel free to contribute or use this code as it's provided for free from udacity web developement professional track course.
 
-Also this shows how you can add subsections within a section. -->
+i only implement some function to make it based on a server code, and some function to help fetching data through Openweathermap.org website.
 
 ### Sponsor
 [(Back to top)](#table-of-contents)
 
-<!-- Your project is gaining traction and it is being used by thousands of people(***with this README there will be even more***). Now it would be a good time to look for people or organisations to sponsor your project. This could be because you are not generating any revenue from your project and you require money for keeping the project alive.
+This only a project code, so if you like my code feel free to contact me trough my [Email](freedomblackknights@gmail.com).
 
-You could add how people can sponsor your project in this section. Add your patreon or GitHub sponsor link here for easy access.
-
-A good idea is to also display the sponsors with their organisation logos or badges to show them your love!(*Someday I will get a sponsor and I can show my love*) -->
+all credit for the source code goes to [udacity.com](https://www.udacity.com/) for providing the starting code and the guidance to build this applicaiton.
 
 ### Adding new features or fixing bugs
 [(Back to top)](#table-of-contents)
 
-<!-- This is to give people an idea how they can raise issues or feature requests in your projects. 
+feel free to report any issue, bugs or improvement through:
 
-You could also give guidelines for submitting and issue or a pull request to your project.
+you should use a [issue template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/ISSUE_TEMPLATE.md) and a [pull request template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/PULL_REQ_TEMPLATE.md)(click for examples) 
 
-Personally and by standard, you should use a [issue template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/ISSUE_TEMPLATE.md) and a [pull request template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/PULL_REQ_TEMPLATE.md)(click for examples) so that when a user opens a new issue they could easily format it as per your project guidelines.
 
-You could also add contact details for people to get in touch with you regarding your project. -->
+### Sources
+[(Back to top)](#table-of-contents)
+
+1. [udacity.com](https://www.udacity.com/)
+2. [openweathermap.org](https://openweathermap.org/)
+3. [writing a good README.md](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+4. [This man's code help me to start think about my project](https://github.com/tem-nik/Weather-Journal-App)
+5. [udacity web development professional track](https://emc.udacity.com/c/egyptfwd/catalog/gOOOLCSBncRvbr8y/i/nd/nd0011-fwd-t2)
+
 
 # License
 [(Back to top)](#table-of-contents)
-
-<!-- Adding the license to README is a good practice so that people can easily refer to it.
-
-Make sure you have added a LICENSE file in your project folder. **Shortcut:** Click add new file in your root of your repo in GitHub > Set file name to LICENSE > GitHub shows LICENSE templates > Choose the one that best suits your project!
-
-I personally add the name of the license and provide a link to it like below. -->
 
 [GNU General Public License version 3](https://opensource.org/licenses/GPL-3.0)
 
 # Footer
 [(Back to top)](#table-of-contents)
 
-<!-- Let's also add a footer because I love footers and also you **can** use this to convey important info.
 
-Let's make it an image because by now you have realised that multimedia in images == cool(*please notice the subtle programming joke). -->
 
 Leave a star in GitHub, give a clap in Medium and share this guide if you found this helpful.
 
-<!-- Add the footer here -->
-
-<!-- ![Footer](https://github.com/navendu-pottekkat/awesome-readme/blob/master/fooooooter.png) -->
+![Footer](https://github.com/navendu-pottekkat/awesome-readme/blob/master/fooooooter.png) 
