@@ -42,6 +42,7 @@ async function generateData() {
 
             // Then updating our web site with the data returned from the get and post functions.
         }).then(updateUIInterface)
+        .then(document.getElementById("entryHolder").scrollIntoView({behavior: "smooth"}))
 }
 
 // Defining our Async GET function to fetch the data from the app endpoint. 
