@@ -12,7 +12,7 @@ const tempUnit = 'imperial'
  
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth() + '/' + d.getDate() + '/' + d.getFullYear();
+let newDate = d.getMonth() + 1 + '/' + d.getDate() + '/' + d.getFullYear();
 
 // Getting the Button element that will generate the data for us.
 const generatorButton = document.querySelector('#generate')
