@@ -13,5 +13,13 @@
   "version": "1.0.0",
   "main": "server.js",
   "author": "Ahmed Mohamed",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZEXAWY/weather-journal-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZEXAWY/weather-journal-app/issues"
+  },
+  "homepage": "https://github.com/ZEXAWY/weather-journal-app#readme"
 }
