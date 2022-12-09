@@ -80,6 +80,7 @@ Mainly, You are going to work with only two files which are the `server.js` and 
         - The first one is the `generateData` function which `fetch` data from the `fullUrl`, to get the `fullURL` we had to build it after the user enter his zip code so we had to wait for that, and the we concatenate the whole `url` variables together into one single `fullURL` variable. so that function will be `async` function that needs to `await` for `fetch` the required data to build the `fullUrl`.
         - `.then()` the second function is used to post data after `fetch` data from the 'url` we defined in the `server.js` file using the `app.post()`.
         - `.then()` the third function is used to display to the user on the website, using the `projectData` object where we saved the data we collected. 
+        - `.then()` scroll into the `div` who's responsible for displaying the results using `.scrollIntoView()`
 
     
 # Contribute
