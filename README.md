@@ -127,3 +127,4 @@ you should use a [issue template](https://github.com/navendu-pottekkat/nsfw-filt
 Leave a star in GitHub, give a clap in Medium and share this guide if you found this helpful.
 
 ![Footer](https://github.com/navendu-pottekkat/awesome-readme/blob/master/fooooooter.png) 
+ 

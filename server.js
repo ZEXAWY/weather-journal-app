@@ -48,4 +48,4 @@ app.post('/addData', (req, res) => {
     data.push(req.body);
     console.log(projectData);
     // console.log(data);
-})
+}) 
